@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { useState, useRef } from "react";
 
-const useTimer = (initialCount) => {
-  const [count, setCount] = useState(initialCount);
-  const [isRunning, setIsRunning] = useState(false);
+const useTimer = (initialCount: number) => {
+  const [count, setCount] = useState<number>(initialCount);
+  const [isRunning, setIsRunning] = useState<boolean>(false);
 
-  const interval = useRef(null);
+  const interval = useRef<number | undefined>(undefined);
 
   function start() {
     if (interval.current) return;
